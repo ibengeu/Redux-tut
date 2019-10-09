@@ -17,6 +17,7 @@ class ConnectedForm extends Component {
     this.state = {
       title: ""
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

@@ -1,8 +1,11 @@
-import {createStore } from 'redux'
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "../reducers/index";
+import { forbiddenMiddlewareWords } from "../middleware";
 
-import rootReducer from '../reducers/index'
-
-const store = createStore(rootReducer)
+const store = createStore(
+    rootReducer,
+    applyMiddleware(forbiddenMiddlewareWords)
+  );
 
 store.subscribe(()=>console.log(store.getState()));
 
